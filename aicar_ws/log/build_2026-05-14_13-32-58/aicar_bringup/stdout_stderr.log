@@ -1,0 +1,34 @@
+running egg_info
+creating ../../build/aicar_bringup/aicar_bringup.egg-info
+writing ../../build/aicar_bringup/aicar_bringup.egg-info/PKG-INFO
+writing dependency_links to ../../build/aicar_bringup/aicar_bringup.egg-info/dependency_links.txt
+writing entry points to ../../build/aicar_bringup/aicar_bringup.egg-info/entry_points.txt
+writing requirements to ../../build/aicar_bringup/aicar_bringup.egg-info/requires.txt
+writing top-level names to ../../build/aicar_bringup/aicar_bringup.egg-info/top_level.txt
+writing manifest file '../../build/aicar_bringup/aicar_bringup.egg-info/SOURCES.txt'
+reading manifest file '../../build/aicar_bringup/aicar_bringup.egg-info/SOURCES.txt'
+writing manifest file '../../build/aicar_bringup/aicar_bringup.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/build
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/build/lib
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/build/lib/aicar_bringup
+copying aicar_bringup/__init__.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/build/lib/aicar_bringup
+running install
+running install_lib
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages/aicar_bringup
+copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/build/lib/aicar_bringup/__init__.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages/aicar_bringup
+byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages/aicar_bringup/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/ament_index
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/ament_index/resource_index
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/ament_index/resource_index/packages
+copying resource/aicar_bringup -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/ament_index/resource_index/packages
+copying package.xml -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/aicar_bringup
+creating /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/aicar_bringup/launch
+copying launch/pid_aicar_drive.launch.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/aicar_bringup/launch
+copying launch/aicar_drive.launch.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/aicar_bringup/launch
+running install_egg_info
+Copying ../../build/aicar_bringup/aicar_bringup.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages/aicar_bringup-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/install.log'

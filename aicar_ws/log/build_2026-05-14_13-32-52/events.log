@@ -1,0 +1,10 @@
+[0.000000] (-) TimerEvent: {}
+[0.000303] (-) JobUnselected: {'identifier': 'aicar_controller'}
+[0.000362] (-) JobUnselected: {'identifier': 'aicar_vision'}
+[0.000390] (aicar_driver) JobQueued: {'identifier': 'aicar_driver', 'dependencies': OrderedDict()}
+[0.000434] (aicar_bringup) JobQueued: {'identifier': 'aicar_bringup', 'dependencies': OrderedDict([('aicar_controller', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller'), ('aicar_vision', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision')])}
+[0.000455] (aicar_driver) JobStarted: {'identifier': 'aicar_driver'}
+[0.005330] (aicar_bringup) JobStarted: {'identifier': 'aicar_bringup'}
+[0.007009] (aicar_bringup) JobEnded: {'identifier': 'aicar_bringup', 'rc': 1}
+[0.007238] (aicar_driver) JobEnded: {'identifier': 'aicar_driver', 'rc': 'SIGINT'}
+[0.017389] (-) EventReactorShutdown: {}
