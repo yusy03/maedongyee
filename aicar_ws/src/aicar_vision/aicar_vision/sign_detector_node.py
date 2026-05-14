@@ -5,7 +5,6 @@ from std_msgs.msg import String
 from cv_bridge import CvBridge
 import cv2
 import os
-import numpy as np
 from ultralytics import YOLO
 from ament_index_python.packages import get_package_share_directory
 
@@ -48,13 +47,17 @@ class SignDetectorNode(Node):
             'right_turn_sign': 'right_turn',
             'horn_sign': 'horn',
             '20_sign': 'slow',
+            'traffic_light': 'traffic_light_green' 
         }
-        self.traffic_light_min_color_ratio = 0.005
 
         # --- 4. ROS 구독/발행 ---
+        self.declare_parameter('image_topic', '/camera/image_raw')
+        image_topic = self.get_parameter('image_topic').get_parameter_value().string_value
         self.subscription = self.create_subscription(
-            Image, '/camera_node/image_raw', self.image_callback, 10)
+            Image, image_topic, self.image_callback, 10)
+        self.get_logger().info(f'Subscribing to image topic: {image_topic}')
         self.publisher_ = self.create_publisher(String, '/sign_detection', 10)
+        self.debug_image_publisher = self.create_publisher(Image, '/image_sign_debug', 10)
 
         # [신규] 시스템 상태 발행용 퍼블리셔
         self.status_publisher_ = self.create_publisher(String, '/system_status', 10)
@@ -78,11 +81,12 @@ class SignDetectorNode(Node):
             self.get_logger().error(f'CV Bridge error: {e}')
             return
 
+        debug_image = cv_image.copy()
+
         # --- 5. 추론 실행 ---
         results = self.model(cv_image, conf=self.confidence_threshold, imgsz=640, verbose=False)
 
         detected_raw_label = None
-        detected_box_xyxy = None
         highest_conf = 0.0
 
         for result in results:
@@ -94,65 +98,50 @@ class SignDetectorNode(Node):
                     raw_label = str(cls_id)
                 
                 conf = float(box.conf[0])
+                command_label = self.class_mapping.get(raw_label)
+                self.draw_debug_box(debug_image, box, command_label or raw_label, conf)
+
                 if conf > highest_conf:
                     highest_conf = conf
                     detected_raw_label = raw_label
-                    detected_box_xyxy = box.xyxy[0].cpu().numpy()
+
+        debug_msg = self.bridge.cv2_to_imgmsg(debug_image, "bgr8")
+        debug_msg.header = msg.header
+        self.debug_image_publisher.publish(debug_msg)
 
         if detected_raw_label:
-            if detected_raw_label == 'traffic_light':
-                command_sign = self.classify_traffic_light(cv_image, detected_box_xyxy)
-                if command_sign is None:
-                    self.get_logger().warn(
-                        f'Traffic light detected, but HSV color was unclear ({highest_conf:.2f})')
-                    return
-            elif detected_raw_label in self.class_mapping:
+            if detected_raw_label in self.class_mapping:
                 command_sign = self.class_mapping[detected_raw_label]
-            else:
-                return
+                if command_sign != self.last_published_sign:
+                    msg = String()
+                    msg.data = command_sign
+                    self.publisher_.publish(msg)
+                    self.get_logger().info(f'>>> SIGN DETECTED: {detected_raw_label} -> {command_sign} ({highest_conf:.2f})')
+                    self.last_published_sign = command_sign
 
-            if command_sign != self.last_published_sign:
-                msg = String()
-                msg.data = command_sign
-                self.publisher_.publish(msg)
-                self.get_logger().info(f'>>> SIGN DETECTED: {detected_raw_label} -> {command_sign} ({highest_conf:.2f})')
-                self.last_published_sign = command_sign
-
-    def classify_traffic_light(self, cv_image, box_xyxy):
-        if box_xyxy is None:
-            return None
-
-        h, w = cv_image.shape[:2]
-        x1, y1, x2, y2 = [int(v) for v in box_xyxy]
+    def draw_debug_box(self, image, box, label, confidence):
+        h, w = image.shape[:2]
+        x1, y1, x2, y2 = [int(v) for v in box.xyxy[0].tolist()]
         x1 = max(0, min(x1, w - 1))
-        x2 = max(0, min(x2, w))
+        x2 = max(0, min(x2, w - 1))
         y1 = max(0, min(y1, h - 1))
-        y2 = max(0, min(y2, h))
+        y2 = max(0, min(y2, h - 1))
 
-        if x2 <= x1 or y2 <= y1:
-            return None
+        color = (0, 255, 0) if label in self.class_mapping.values() else (0, 165, 255)
+        cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
 
-        roi = cv_image[y1:y2, x1:x2]
-        if roi.size == 0:
-            return None
-
-        hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
-
-        red_mask_1 = cv2.inRange(hsv, np.array([0, 80, 80]), np.array([10, 255, 255]))
-        red_mask_2 = cv2.inRange(hsv, np.array([170, 80, 80]), np.array([180, 255, 255]))
-        red_mask = cv2.bitwise_or(red_mask_1, red_mask_2)
-        green_mask = cv2.inRange(hsv, np.array([35, 60, 60]), np.array([90, 255, 255]))
-
-        red_pixels = cv2.countNonZero(red_mask)
-        green_pixels = cv2.countNonZero(green_mask)
-        min_pixels = max(10, int(roi.shape[0] * roi.shape[1] * self.traffic_light_min_color_ratio))
-
-        if red_pixels >= min_pixels and red_pixels > green_pixels:
-            return 'traffic_light_red'
-        if green_pixels >= min_pixels and green_pixels > red_pixels:
-            return 'traffic_light_green'
-
-        return None
+        text = f'{label} {confidence:.2f}'
+        text_y = max(20, y1 - 8)
+        cv2.putText(
+            image,
+            text,
+            (x1, text_y),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.6,
+            color,
+            2,
+            cv2.LINE_AA
+        )
 
 def main(args=None):
     rclpy.init(args=args)

@@ -159,15 +159,11 @@ class PIDControllerNode(Node):
             self.next_state_after_stop = STATE_NORMAL
             self.set_state(STATE_STOP_WAIT)
 
-        elif new_sign == 'traffic_light_red':
+        elif new_sign == 'traffic_light_green' or new_sign == 'traffic_light':
             self.stop_wait_time = 3.0
             self.next_state_after_stop = STATE_TURNING
             self.turn_direction = -1.0 # 우회전
             self.set_state(STATE_STOP_WAIT)
-
-        elif new_sign == 'traffic_light_green' or new_sign == 'traffic_light':
-            self.turn_direction = -1.0 # 우회전
-            self.set_state(STATE_TURNING)
 
         elif new_sign == self.slow_sign_name:
             self.slow_mode_end_time = now + 5.0

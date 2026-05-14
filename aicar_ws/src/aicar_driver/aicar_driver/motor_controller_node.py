@@ -23,20 +23,10 @@ class MotorControllerNode(Node):
         
         # --- 2. 파라미터 선언 ---
         # "직진"으로 간주할 조향각의 임계값 (radian)
-        self.declare_parameter('enable_motors', False)
         self.declare_parameter('turn_threshold', 0.1) 
-        self.declare_parameter('cmd_timeout', 0.5)
-        self.enable_motors = self.get_parameter('enable_motors').get_parameter_value().bool_value
         self.turn_threshold = self.get_parameter('turn_threshold').get_parameter_value().double_value
-        self.cmd_timeout = self.get_parameter('cmd_timeout').get_parameter_value().double_value
-        self.last_cmd_time = self.get_clock().now().nanoseconds / 1e9
-        self.watchdog_stopped = True
 
         self.h = None # lgpio 핸들
-
-        if not self.enable_motors:
-            self.get_logger().warn('Motors are disabled. Set enable_motors:=true to allow GPIO output.')
-            return
 
         try:
             # --- 3. lgpio 칩 열기 및 핀 설정 ---
@@ -67,15 +57,9 @@ class MotorControllerNode(Node):
             '/drive',  # PurePursuitNode가 발행하는 토픽
             self.drive_callback,
             10)
-        self.create_timer(0.1, self.watchdog_callback)
 
     def drive_callback(self, msg):
         """ /drive 토픽을 받아 스키드 스티어 로직으로 모터를 구동합니다. """
-        if not self.enable_motors or self.h is None:
-            return
-
-        self.last_cmd_time = self.get_clock().now().nanoseconds / 1e9
-        self.watchdog_stopped = False
         
         base_speed = msg.drive.speed
         steering_angle = msg.drive.steering_angle
@@ -102,16 +86,6 @@ class MotorControllerNode(Node):
         elif steering_angle > 0:
             # "우회전" (스키드 스티어)
             self.motor_right(pwm_val)
-
-    def watchdog_callback(self):
-        if not self.enable_motors or self.h is None:
-            return
-
-        now = self.get_clock().now().nanoseconds / 1e9
-        if now - self.last_cmd_time > self.cmd_timeout and not self.watchdog_stopped:
-            self.motor_stop()
-            self.watchdog_stopped = True
-            self.get_logger().warn('No /drive received recently. Motors stopped by watchdog.')
 
     def motor_go(self, pwm_duty_cycle):
         lgpio.gpio_write(self.h, AIN1_PIN, 0) # A: 전진

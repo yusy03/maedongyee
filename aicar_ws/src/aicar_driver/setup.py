@@ -22,8 +22,6 @@ setup(
         'console_scripts': [
             'motor_controller_node = aicar_driver.motor_controller_node:main',
             'differential_drive_node = aicar_driver.differential_drive_node:main',
-            'drive_direction_display_node = aicar_driver.drive_direction_display_node:main',
-            'motor_stop_node = aicar_driver.motor_stop_node:main',
         ],
     },
 )

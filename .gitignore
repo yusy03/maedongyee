@@ -1,0 +1,9 @@
+# VS Code 임시 파일
+.vscode/
+**/.vscode/
+*.db
+
+# ROS 2 빌드 결과물
+build/
+install/
+log/
