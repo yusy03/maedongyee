@@ -214,12 +214,15 @@ class PIDControllerNode(Node):
 
         linear_vel = 0.0
         angular_vel = 0.0
+        # 시각화를 위해 현재 동작을 텍스트로 저장할 변수
+        action_text = "Action: Initializing"
 
         # --- 상태 머신 로직 ---
         if self.drive_state == STATE_NORMAL:
             # 1. PID 조향각 먼저 계산
             steering_angle = self.calculate_pid(bev_binary, h, w, now)
 
+            action_text = "Action: Lane Following"
             reduction_factor = 0.05
             target_speed = self.base_speed - (abs(steering_angle) * reduction_factor)
 
@@ -229,6 +232,7 @@ class PIDControllerNode(Node):
             # 표지판 감속 로직 (가변 속도와 중첩 적용)
             if self.slow_sign_name in self.detected_signs:
                 if now < self.slow_mode_end_time:
+                    action_text = "Action: Slow Down"
                     linear_vel *= 0.5
                 else:
                     self.get_logger().info("Slow mode 5s expired. Resuming full speed.")
@@ -240,6 +244,7 @@ class PIDControllerNode(Node):
             # (이하 동일)
             linear_vel = 0.0
             angular_vel = 0.0
+            action_text = f"Action: Stop ({max(0, self.stop_wait_time - state_duration):.1f}s)"
             if state_duration >= self.stop_wait_time:
                 self.cleanup_after_sign(self.current_sign)
                 self.set_state(self.next_state_after_stop)
@@ -248,6 +253,7 @@ class PIDControllerNode(Node):
             # (이하 동일)
             linear_vel = 0.0
             angular_vel = self.turn_direction * 2.0
+            action_text = "Action: Turning " + ("Left" if self.turn_direction > 0 else "Right")
             if state_duration >= 1.9:
                 self.set_state(STATE_POST_TURN_STRAIGHT)
 
@@ -255,9 +261,24 @@ class PIDControllerNode(Node):
             # (이하 동일)
             linear_vel = self.base_speed
             angular_vel = 0.0
+            action_text = "Action: Go Straight"
             if state_duration >= 1.0:
                 self.cleanup_after_sign(self.current_sign)
                 self.set_state(STATE_NORMAL)
+
+        # --- 시각화: 현재 상태, 표지판, 동작 정보 표시 ---
+        display_img = cv2.cvtColor(bev_binary, cv2.COLOR_GRAY2BGR)
+
+        # 1. 현재 주행 상태 (노란색)
+        cv2.putText(display_img, f"State: {self.drive_state}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 0), 2)
+        # 2. 현재 인식된 표지판 (청록색)
+        sign_text = f"Sign: {self.current_sign}" if self.current_sign else "Sign: None"
+        cv2.putText(display_img, sign_text, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
+        # 3. [추가] 현재 수행 동작 (초록색)
+        cv2.putText(display_img, action_text, (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+
+        cv2.imshow("Controller Status", display_img)
+        cv2.waitKey(1)
 
         twist = Twist()
         twist.linear.x = float(linear_vel)
@@ -303,6 +324,7 @@ class PIDControllerNode(Node):
         return p + i + d
 
     def destroy_node(self):
+        cv2.destroyAllWindows()
         lgpio.tx_pwm(self.h, BUZZER_PIN, BUZZER_FREQ, 0)
         if self.h: lgpio.gpiochip_close(self.h)
         super().destroy_node()
