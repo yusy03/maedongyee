@@ -1,7 +1,9 @@
+/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/motor_stop_node.py
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/motor_controller_node.py
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/drive_direction_display_node.py
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/differential_drive_node.py
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/__init__.py
+/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/__pycache__/motor_stop_node.cpython-310.pyc
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/__pycache__/motor_controller_node.cpython-310.pyc
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/__pycache__/drive_direction_display_node.cpython-310.pyc
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/__pycache__/differential_drive_node.cpython-310.pyc
@@ -18,3 +20,4 @@
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver/differential_drive_node
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver/drive_direction_display_node
 /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver/motor_controller_node
+/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver/motor_stop_node

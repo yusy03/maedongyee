@@ -1,0 +1,36 @@
+[0.568s] Invoking command in '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_driver': PYTHONPATH=/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aicar_driver build --build-base /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build install --record /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/install.log --single-version-externally-managed install_data
+[0.687s] running egg_info
+[0.687s] writing ../../build/aicar_driver/aicar_driver.egg-info/PKG-INFO
+[0.687s] writing dependency_links to ../../build/aicar_driver/aicar_driver.egg-info/dependency_links.txt
+[0.687s] writing entry points to ../../build/aicar_driver/aicar_driver.egg-info/entry_points.txt
+[0.687s] writing requirements to ../../build/aicar_driver/aicar_driver.egg-info/requires.txt
+[0.687s] writing top-level names to ../../build/aicar_driver/aicar_driver.egg-info/top_level.txt
+[0.688s] reading manifest file '../../build/aicar_driver/aicar_driver.egg-info/SOURCES.txt'
+[0.688s] writing manifest file '../../build/aicar_driver/aicar_driver.egg-info/SOURCES.txt'
+[0.688s] running build
+[0.688s] running build_py
+[0.688s] copying aicar_driver/motor_stop_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver
+[0.688s] copying aicar_driver/motor_controller_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver
+[0.688s] copying aicar_driver/drive_direction_display_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver
+[0.688s] copying aicar_driver/differential_drive_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver
+[0.688s] running install
+[0.689s] running install_lib
+[0.689s] copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver/motor_stop_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver
+[0.689s] copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver/motor_controller_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver
+[0.689s] copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver/drive_direction_display_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver
+[0.689s] copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver/differential_drive_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver
+[0.689s] byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/motor_stop_node.py to motor_stop_node.cpython-310.pyc
+[0.690s] byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/motor_controller_node.py to motor_controller_node.cpython-310.pyc
+[0.690s] byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/drive_direction_display_node.py to drive_direction_display_node.cpython-310.pyc
+[0.691s] byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/differential_drive_node.py to differential_drive_node.cpython-310.pyc
+[0.691s] running install_data
+[0.691s] running install_egg_info
+[0.692s] removing '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver-0.0.0-py3.10.egg-info' (and everything under it)
+[0.693s] Copying ../../build/aicar_driver/aicar_driver.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver-0.0.0-py3.10.egg-info
+[0.693s] running install_scripts
+[0.703s] Installing differential_drive_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver
+[0.703s] Installing drive_direction_display_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver
+[0.703s] Installing motor_controller_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver
+[0.703s] Installing motor_stop_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver
+[0.703s] writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/install.log'
+[0.719s] Invoked command in '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_driver' returned '0': PYTHONPATH=/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aicar_driver build --build-base /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build install --record /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/install.log --single-version-externally-managed install_data

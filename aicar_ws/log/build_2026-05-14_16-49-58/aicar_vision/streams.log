@@ -1,0 +1,24 @@
+[0.574s] Invoking command in '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_vision': PYTHONPATH=/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aicar_vision build --build-base /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/build install --record /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/install.log --single-version-externally-managed install_data
+[0.697s] running egg_info
+[0.698s] writing ../../build/aicar_vision/aicar_vision.egg-info/PKG-INFO
+[0.698s] writing dependency_links to ../../build/aicar_vision/aicar_vision.egg-info/dependency_links.txt
+[0.698s] writing entry points to ../../build/aicar_vision/aicar_vision.egg-info/entry_points.txt
+[0.698s] writing requirements to ../../build/aicar_vision/aicar_vision.egg-info/requires.txt
+[0.698s] writing top-level names to ../../build/aicar_vision/aicar_vision.egg-info/top_level.txt
+[0.699s] reading manifest file '../../build/aicar_vision/aicar_vision.egg-info/SOURCES.txt'
+[0.699s] writing manifest file '../../build/aicar_vision/aicar_vision.egg-info/SOURCES.txt'
+[0.699s] running build
+[0.699s] running build_py
+[0.699s] running install
+[0.700s] running install_lib
+[0.700s] running install_data
+[0.700s] running install_egg_info
+[0.701s] removing '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages/aicar_vision-0.0.0-py3.10.egg-info' (and everything under it)
+[0.701s] Copying ../../build/aicar_vision/aicar_vision.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages/aicar_vision-0.0.0-py3.10.egg-info
+[0.702s] running install_scripts
+[0.712s] Installing bev_viewer_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision
+[0.712s] Installing fake_detector_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision
+[0.712s] Installing lane_detector_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision
+[0.712s] Installing sign_detector_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision
+[0.712s] writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/install.log'
+[0.725s] Invoked command in '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_vision' returned '0': PYTHONPATH=/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aicar_vision build --build-base /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/build install --record /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/install.log --single-version-externally-managed install_data

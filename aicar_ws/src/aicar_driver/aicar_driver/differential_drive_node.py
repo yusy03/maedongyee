@@ -26,11 +26,13 @@ class MotorControllerNode(Node):
         
         # --- 튜닝 파라미터 ---
         # wheel_separation: 왼쪽 바퀴 중심과 오른쪽 바퀴 중심 사이의 거리 [미터]
+        self.declare_parameter('enable_motors', False)
         self.declare_parameter('wheel_separation', 0.106)
         self.declare_parameter('speed_gain', 150.0) # m/s -> PWM 변환 비율
         self.declare_parameter('display_only', False) # 테스트용: 모터 대신 화면 표시
         self.declare_parameter('cmd_timeout', 0.5) # 명령 끊김 시 자동 정지 시간
 
+        self.enable_motors = self.get_parameter('enable_motors').get_parameter_value().bool_value
         self.wheel_sep = self.get_parameter('wheel_separation').get_parameter_value().double_value
         self.speed_gain = self.get_parameter('speed_gain').get_parameter_value().double_value
         self.display_only = self.get_parameter('display_only').get_parameter_value().bool_value
@@ -44,6 +46,8 @@ class MotorControllerNode(Node):
             self.get_logger().warn('Display-only mode enabled. GPIO motor output is disabled.')
             if cv2 is None:
                 self.get_logger().warn('OpenCV is not available, so direction will be logged only.')
+        elif not self.enable_motors:
+            self.get_logger().warn('Motors are disabled. Set enable_motors:=true to allow GPIO output.')
         else:
             if lgpio is None:
                 raise RuntimeError('lgpio is required when display_only is false.')
@@ -62,6 +66,8 @@ class MotorControllerNode(Node):
     def cmd_vel_callback(self, msg):
         if self.display_only:
             self.show_drive_direction(msg)
+            return
+        if not self.enable_motors or self.h is None:
             return
 
         self.last_cmd_time = self.get_clock().now().nanoseconds / 1e9

@@ -1,4 +1,5 @@
 import rclpy
+from ackermann_msgs.msg import AckermannDriveStamped
 from geometry_msgs.msg import Twist
 from rclpy.node import Node
 import numpy as np
@@ -18,18 +19,34 @@ class DriveDirectionDisplayNode(Node):
         self.get_logger().warn('Display-only drive direction node started. Motors are not controlled here.')
 
         self.last_direction = None
+        self.declare_parameter('input_type', 'twist')
         self.declare_parameter('cmd_vel_topic', '/cmd_vel_display')
+        self.declare_parameter('drive_topic', '/drive_display')
+        input_type = self.get_parameter('input_type').get_parameter_value().string_value
         cmd_vel_topic = self.get_parameter('cmd_vel_topic').get_parameter_value().string_value
-        self.subscription = self.create_subscription(
-            Twist, cmd_vel_topic, self.cmd_vel_callback, 10)
-        self.get_logger().info(f'Subscribed to display command topic: {cmd_vel_topic}')
+        drive_topic = self.get_parameter('drive_topic').get_parameter_value().string_value
+
+        if input_type == 'ackermann':
+            self.subscription = self.create_subscription(
+                AckermannDriveStamped, drive_topic, self.drive_callback, 10)
+            self.get_logger().info(f'Subscribed to display drive topic: {drive_topic}')
+        else:
+            self.subscription = self.create_subscription(
+                Twist, cmd_vel_topic, self.cmd_vel_callback, 10)
+            self.get_logger().info(f'Subscribed to display command topic: {cmd_vel_topic}')
 
         if cv2 is None:
             self.get_logger().warn('OpenCV is not available, so direction will be logged only.')
 
     def cmd_vel_callback(self, msg):
-        direction, color = self.get_direction(msg)
+        direction, color = self.get_twist_direction(msg)
+        self.show_direction(direction, color)
 
+    def drive_callback(self, msg):
+        direction, color = self.get_ackermann_direction(msg)
+        self.show_direction(direction, color)
+
+    def show_direction(self, direction, color):
         if direction != self.last_direction:
             self.get_logger().info(f'Drive direction: {direction}')
             self.last_direction = direction
@@ -48,7 +65,7 @@ class DriveDirectionDisplayNode(Node):
         cv2.imshow(DISPLAY_WINDOW_NAME, canvas)
         cv2.waitKey(1)
 
-    def get_direction(self, msg):
+    def get_twist_direction(self, msg):
         angular_threshold = 0.05
         stop_threshold = 0.01
 
@@ -57,6 +74,18 @@ class DriveDirectionDisplayNode(Node):
         if msg.angular.z > angular_threshold:
             return 'LEFT', (255, 120, 0)
         if msg.angular.z < -angular_threshold:
+            return 'RIGHT', (0, 180, 0)
+        return 'STRAIGHT', (80, 80, 80)
+
+    def get_ackermann_direction(self, msg):
+        steering_threshold = 0.05
+        stop_threshold = 0.01
+
+        if abs(msg.drive.speed) < stop_threshold and abs(msg.drive.steering_angle) < steering_threshold:
+            return 'STOP', (0, 0, 255)
+        if msg.drive.steering_angle < -steering_threshold:
+            return 'LEFT', (255, 120, 0)
+        if msg.drive.steering_angle > steering_threshold:
             return 'RIGHT', (0, 180, 0)
         return 'STRAIGHT', (80, 80, 80)
 
