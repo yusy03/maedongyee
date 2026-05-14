@@ -18,8 +18,11 @@ class DriveDirectionDisplayNode(Node):
         self.get_logger().warn('Display-only drive direction node started. Motors are not controlled here.')
 
         self.last_direction = None
+        self.declare_parameter('cmd_vel_topic', '/cmd_vel_display')
+        cmd_vel_topic = self.get_parameter('cmd_vel_topic').get_parameter_value().string_value
         self.subscription = self.create_subscription(
-            Twist, '/cmd_vel', self.cmd_vel_callback, 10)
+            Twist, cmd_vel_topic, self.cmd_vel_callback, 10)
+        self.get_logger().info(f'Subscribed to display command topic: {cmd_vel_topic}')
 
         if cv2 is None:
             self.get_logger().warn('OpenCV is not available, so direction will be logged only.')

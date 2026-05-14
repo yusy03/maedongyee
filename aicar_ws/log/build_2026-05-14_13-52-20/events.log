@@ -1,0 +1,718 @@
+[0.000000] (-) TimerEvent: {}
+[0.000056] (aicar_controller) JobQueued: {'identifier': 'aicar_controller', 'dependencies': OrderedDict()}
+[0.000078] (aicar_driver) JobQueued: {'identifier': 'aicar_driver', 'dependencies': OrderedDict()}
+[0.000094] (aicar_vision) JobQueued: {'identifier': 'aicar_vision', 'dependencies': OrderedDict()}
+[0.000109] (aicar_bringup) JobQueued: {'identifier': 'aicar_bringup', 'dependencies': OrderedDict([('aicar_controller', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller'), ('aicar_vision', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision')])}
+[0.000128] (aicar_controller) JobStarted: {'identifier': 'aicar_controller'}
+[0.004438] (aicar_vision) JobStarted: {'identifier': 'aicar_vision'}
+[0.006574] (aicar_driver) JobStarted: {'identifier': 'aicar_driver'}
+[0.099701] (-) TimerEvent: {}
+[0.199958] (-) TimerEvent: {}
+[0.300226] (-) TimerEvent: {}
+[0.400846] (-) TimerEvent: {}
+[0.501127] (-) TimerEvent: {}
+[0.575966] (aicar_controller) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/aicar_controller', 'build', '--build-base', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_controller/build', 'install', '--record', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_controller/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_controller', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/yusy', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'yusy', 'LC_TIME': 'ko_KR.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"ko","osLocale":"en-us","resolvedLanguage":"ko","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","messagesFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f/nls.messages.json","corruptMarkerFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"},"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"3a9564676442280bf72c3aeaadf6ff67.ko","_languagePackSupport":true,"_translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","_cacheRoot":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko","_resolvedLanguagePackCoreLocation":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f","_corruptedFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yusy', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'DESKTOP_SESSION': 'ubuntu', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-c3794fe1-1.12-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '1362', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1853', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', '_CONDA_ROOT': '/home/yusy/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '7681', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'COLCON_PREFIX_PATH': '/home/yusy/ros2_ws/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'yusy', 'JOURNAL_STREAM': '8:10934', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'USERNAME': 'yusy', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/yusy/.local/bin:/home/yusy/.codex/tmp/arg0/codex-arg0VbaCAJ:/home/yusy/.local/bin:/opt/ros/humble/bin:/home/yusy/miniconda3/condabin:/home/yusy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/yusy/.vscode/extensions/openai.chatgpt-26.506.31421-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/msi:@/tmp/.ICE-unix/1819,unix/msi:/tmp/.ICE-unix/1819', 'INVOCATION_ID': '00632fcb52e0462088a2a463c7ca3311', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/yusy/ros2_ws/install/superpoint_slam:/home/yusy/ros2_ws/install/ocams_ros2:/home/yusy/ros2_ws/install/ocam_ros2:/home/yusy/ros2_ws/install/my_robot_controller:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/yusy/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019e2499-9f78-7d13-be91-58ce424a4c1b', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_controller', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/yusy/.config/Code/CachedData/0958016b2af9f09bb4257e0df4a95e2f90590f9f', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/superpoint_slam/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/ocams_ros2/lib/python3.10/site-packages:/home/yusy/ros2_ws/build/my_robot_controller:/home/yusy/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/yusy/ros2_ws/install/ocam_ros2', 'VSCODE_PID': '7681'}, 'shell': False}
+[0.576932] (aicar_vision) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/aicar_vision', 'build', '--build-base', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/build', 'install', '--record', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_vision', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/yusy', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'yusy', 'LC_TIME': 'ko_KR.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"ko","osLocale":"en-us","resolvedLanguage":"ko","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","messagesFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f/nls.messages.json","corruptMarkerFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"},"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"3a9564676442280bf72c3aeaadf6ff67.ko","_languagePackSupport":true,"_translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","_cacheRoot":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko","_resolvedLanguagePackCoreLocation":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f","_corruptedFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yusy', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'DESKTOP_SESSION': 'ubuntu', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-c3794fe1-1.12-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '1362', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1853', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', '_CONDA_ROOT': '/home/yusy/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '7681', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'COLCON_PREFIX_PATH': '/home/yusy/ros2_ws/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'yusy', 'JOURNAL_STREAM': '8:10934', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'USERNAME': 'yusy', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/yusy/.local/bin:/home/yusy/.codex/tmp/arg0/codex-arg0VbaCAJ:/home/yusy/.local/bin:/opt/ros/humble/bin:/home/yusy/miniconda3/condabin:/home/yusy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/yusy/.vscode/extensions/openai.chatgpt-26.506.31421-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/msi:@/tmp/.ICE-unix/1819,unix/msi:/tmp/.ICE-unix/1819', 'INVOCATION_ID': '00632fcb52e0462088a2a463c7ca3311', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/yusy/ros2_ws/install/superpoint_slam:/home/yusy/ros2_ws/install/ocams_ros2:/home/yusy/ros2_ws/install/ocam_ros2:/home/yusy/ros2_ws/install/my_robot_controller:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/yusy/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019e2499-9f78-7d13-be91-58ce424a4c1b', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/yusy/.config/Code/CachedData/0958016b2af9f09bb4257e0df4a95e2f90590f9f', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/superpoint_slam/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/ocams_ros2/lib/python3.10/site-packages:/home/yusy/ros2_ws/build/my_robot_controller:/home/yusy/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/yusy/ros2_ws/install/ocam_ros2', 'VSCODE_PID': '7681'}, 'shell': False}
+[0.578057] (aicar_driver) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/aicar_driver', 'build', '--build-base', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build', 'install', '--record', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_driver', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/yusy', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'yusy', 'LC_TIME': 'ko_KR.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"ko","osLocale":"en-us","resolvedLanguage":"ko","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","messagesFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f/nls.messages.json","corruptMarkerFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"},"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"3a9564676442280bf72c3aeaadf6ff67.ko","_languagePackSupport":true,"_translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","_cacheRoot":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko","_resolvedLanguagePackCoreLocation":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f","_corruptedFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yusy', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'DESKTOP_SESSION': 'ubuntu', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-c3794fe1-1.12-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '1362', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1853', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', '_CONDA_ROOT': '/home/yusy/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '7681', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'COLCON_PREFIX_PATH': '/home/yusy/ros2_ws/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'yusy', 'JOURNAL_STREAM': '8:10934', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'USERNAME': 'yusy', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/yusy/.local/bin:/home/yusy/.codex/tmp/arg0/codex-arg0VbaCAJ:/home/yusy/.local/bin:/opt/ros/humble/bin:/home/yusy/miniconda3/condabin:/home/yusy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/yusy/.vscode/extensions/openai.chatgpt-26.506.31421-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/msi:@/tmp/.ICE-unix/1819,unix/msi:/tmp/.ICE-unix/1819', 'INVOCATION_ID': '00632fcb52e0462088a2a463c7ca3311', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/yusy/ros2_ws/install/superpoint_slam:/home/yusy/ros2_ws/install/ocams_ros2:/home/yusy/ros2_ws/install/ocam_ros2:/home/yusy/ros2_ws/install/my_robot_controller:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/yusy/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019e2499-9f78-7d13-be91-58ce424a4c1b', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/yusy/.config/Code/CachedData/0958016b2af9f09bb4257e0df4a95e2f90590f9f', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/superpoint_slam/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/ocams_ros2/lib/python3.10/site-packages:/home/yusy/ros2_ws/build/my_robot_controller:/home/yusy/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/yusy/ros2_ws/install/ocam_ros2', 'VSCODE_PID': '7681'}, 'shell': False}
+[0.601273] (-) TimerEvent: {}
+[0.696020] (aicar_controller) StdoutLine: {'line': b'running egg_info\n'}
+[0.696497] (aicar_controller) StdoutLine: {'line': b'writing ../../build/aicar_controller/aicar_controller.egg-info/PKG-INFO\n'}
+[0.696559] (aicar_controller) StdoutLine: {'line': b'writing dependency_links to ../../build/aicar_controller/aicar_controller.egg-info/dependency_links.txt\n'}
+[0.696591] (aicar_controller) StdoutLine: {'line': b'writing entry points to ../../build/aicar_controller/aicar_controller.egg-info/entry_points.txt\n'}
+[0.696620] (aicar_controller) StdoutLine: {'line': b'writing requirements to ../../build/aicar_controller/aicar_controller.egg-info/requires.txt\n'}
+[0.696646] (aicar_controller) StdoutLine: {'line': b'writing top-level names to ../../build/aicar_controller/aicar_controller.egg-info/top_level.txt\n'}
+[0.697493] (aicar_controller) StdoutLine: {'line': b"reading manifest file '../../build/aicar_controller/aicar_controller.egg-info/SOURCES.txt'\n"}
+[0.697856] (aicar_controller) StdoutLine: {'line': b"writing manifest file '../../build/aicar_controller/aicar_controller.egg-info/SOURCES.txt'\n"}
+[0.697920] (aicar_controller) StdoutLine: {'line': b'running build\n'}
+[0.698165] (aicar_controller) StdoutLine: {'line': b'running build_py\n'}
+[0.698199] (aicar_controller) StdoutLine: {'line': b'running install\n'}
+[0.698224] (aicar_controller) StdoutLine: {'line': b'running install_lib\n'}
+[0.698751] (aicar_controller) StdoutLine: {'line': b'running install_data\n'}
+[0.698807] (aicar_controller) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.699715] (aicar_controller) StdoutLine: {'line': b"removing '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller/lib/python3.10/site-packages/aicar_controller-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.699775] (aicar_controller) StdoutLine: {'line': b'Copying ../../build/aicar_controller/aicar_controller.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller/lib/python3.10/site-packages/aicar_controller-0.0.0-py3.10.egg-info\n'}
+[0.699954] (aicar_controller) StdoutLine: {'line': b'running install_scripts\n'}
+[0.701335] (-) TimerEvent: {}
+[0.706958] (aicar_driver) StdoutLine: {'line': b'running egg_info\n'}
+[0.707250] (aicar_driver) StdoutLine: {'line': b'writing ../../build/aicar_driver/aicar_driver.egg-info/PKG-INFO\n'}
+[0.707315] (aicar_driver) StdoutLine: {'line': b'writing dependency_links to ../../build/aicar_driver/aicar_driver.egg-info/dependency_links.txt\n'}
+[0.707470] (aicar_driver) StdoutLine: {'line': b'writing entry points to ../../build/aicar_driver/aicar_driver.egg-info/entry_points.txt\n'}
+[0.707537] (aicar_driver) StdoutLine: {'line': b'writing requirements to ../../build/aicar_driver/aicar_driver.egg-info/requires.txt\n'}
+[0.707569] (aicar_driver) StdoutLine: {'line': b'writing top-level names to ../../build/aicar_driver/aicar_driver.egg-info/top_level.txt\n'}
+[0.707794] (aicar_vision) StdoutLine: {'line': b'running egg_info\n'}
+[0.708090] (aicar_vision) StdoutLine: {'line': b'writing ../../build/aicar_vision/aicar_vision.egg-info/PKG-INFO\n'}
+[0.708164] (aicar_vision) StdoutLine: {'line': b'writing dependency_links to ../../build/aicar_vision/aicar_vision.egg-info/dependency_links.txt\n'}
+[0.708459] (aicar_vision) StdoutLine: {'line': b'writing entry points to ../../build/aicar_vision/aicar_vision.egg-info/entry_points.txt\n'}
+[0.708532] (aicar_vision) StdoutLine: {'line': b'writing requirements to ../../build/aicar_vision/aicar_vision.egg-info/requires.txt\n'}
+[0.708565] (aicar_vision) StdoutLine: {'line': b'writing top-level names to ../../build/aicar_vision/aicar_vision.egg-info/top_level.txt\n'}
+[0.708590] (aicar_driver) StdoutLine: {'line': b"reading manifest file '../../build/aicar_driver/aicar_driver.egg-info/SOURCES.txt'\n"}
+[0.708643] (aicar_driver) StdoutLine: {'line': b"writing manifest file '../../build/aicar_driver/aicar_driver.egg-info/SOURCES.txt'\n"}
+[0.708916] (aicar_driver) StdoutLine: {'line': b'running build\n'}
+[0.709204] (aicar_driver) StdoutLine: {'line': b'running build_py\n'}
+[0.709240] (aicar_driver) StdoutLine: {'line': b'copying aicar_driver/drive_direction_display_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver\n'}
+[0.709266] (aicar_driver) StdoutLine: {'line': b'copying aicar_driver/differential_drive_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver\n'}
+[0.709289] (aicar_driver) StdoutLine: {'line': b'running install\n'}
+[0.709311] (aicar_vision) StdoutLine: {'line': b"reading manifest file '../../build/aicar_vision/aicar_vision.egg-info/SOURCES.txt'\n"}
+[0.709336] (aicar_driver) StdoutLine: {'line': b'running install_lib\n'}
+[0.709529] (aicar_vision) StdoutLine: {'line': b"writing manifest file '../../build/aicar_vision/aicar_vision.egg-info/SOURCES.txt'\n"}
+[0.709597] (aicar_driver) StdoutLine: {'line': b'copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver/drive_direction_display_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver\n'}
+[0.709672] (aicar_vision) StdoutLine: {'line': b'running build\n'}
+[0.709699] (aicar_vision) StdoutLine: {'line': b'running build_py\n'}
+[0.709724] (aicar_driver) StdoutLine: {'line': b'copying /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/build/lib/aicar_driver/differential_drive_node.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver\n'}
+[0.709749] (aicar_controller) StdoutLine: {'line': b'Installing pid_controller_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller/lib/aicar_controller\n'}
+[0.709828] (aicar_vision) StdoutLine: {'line': b'running install\n'}
+[0.709852] (aicar_controller) StdoutLine: {'line': b'Installing pure_pursuit_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller/lib/aicar_controller\n'}
+[0.709875] (aicar_driver) StdoutLine: {'line': b'byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/drive_direction_display_node.py to drive_direction_display_node.cpython-310.pyc\n'}
+[0.709903] (aicar_vision) StdoutLine: {'line': b'running install_lib\n'}
+[0.709924] (aicar_controller) StdoutLine: {'line': b"writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_controller/install.log'\n"}
+[0.710350] (aicar_driver) StdoutLine: {'line': b'byte-compiling /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver/differential_drive_node.py to differential_drive_node.cpython-310.pyc\n'}
+[0.710467] (aicar_vision) StdoutLine: {'line': b'running install_data\n'}
+[0.710490] (aicar_vision) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.711047] (aicar_driver) StdoutLine: {'line': b'running install_data\n'}
+[0.711114] (aicar_driver) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.711328] (aicar_vision) StdoutLine: {'line': b"removing '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages/aicar_vision-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.711478] (aicar_vision) StdoutLine: {'line': b'Copying ../../build/aicar_vision/aicar_vision.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages/aicar_vision-0.0.0-py3.10.egg-info\n'}
+[0.711769] (aicar_vision) StdoutLine: {'line': b'running install_scripts\n'}
+[0.711895] (aicar_driver) StdoutLine: {'line': b"removing '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.712035] (aicar_driver) StdoutLine: {'line': b'Copying ../../build/aicar_driver/aicar_driver.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/python3.10/site-packages/aicar_driver-0.0.0-py3.10.egg-info\n'}
+[0.712314] (aicar_driver) StdoutLine: {'line': b'running install_scripts\n'}
+[0.721815] (aicar_vision) StdoutLine: {'line': b'Installing bev_viewer_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision\n'}
+[0.722025] (aicar_vision) StdoutLine: {'line': b'Installing fake_detector_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision\n'}
+[0.722060] (aicar_vision) StdoutLine: {'line': b'Installing lane_detector_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision\n'}
+[0.722083] (aicar_vision) StdoutLine: {'line': b'Installing sign_detector_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/aicar_vision\n'}
+[0.722110] (aicar_controller) CommandEnded: {'returncode': 0}
+[0.727037] (aicar_controller) JobEnded: {'identifier': 'aicar_controller', 'rc': 0}
+[0.727224] (aicar_vision) StdoutLine: {'line': b"writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_vision/install.log'\n"}
+[0.727270] (aicar_driver) StdoutLine: {'line': b'Installing differential_drive_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver\n'}
+[0.727304] (aicar_driver) StdoutLine: {'line': b'Installing drive_direction_display_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver\n'}
+[0.727337] (aicar_driver) StdoutLine: {'line': b'Installing motor_controller_node script to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_driver/lib/aicar_driver\n'}
+[0.727360] (aicar_driver) StdoutLine: {'line': b"writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_driver/install.log'\n"}
+[0.735584] (aicar_driver) CommandEnded: {'returncode': 0}
+[0.738623] (aicar_driver) JobEnded: {'identifier': 'aicar_driver', 'rc': 0}
+[0.738933] (aicar_vision) CommandEnded: {'returncode': 0}
+[0.741519] (aicar_vision) JobEnded: {'identifier': 'aicar_vision', 'rc': 0}
+[0.742010] (aicar_bringup) JobStarted: {'identifier': 'aicar_bringup'}
+[0.801468] (-) TimerEvent: {}
+[0.901759] (-) TimerEvent: {}
+[1.002025] (-) TimerEvent: {}
+[1.102181] (-) TimerEvent: {}
+[1.202359] (-) TimerEvent: {}
+[1.302577] (-) TimerEvent: {}
+[1.402920] (-) TimerEvent: {}
+[1.503281] (-) TimerEvent: {}
+[1.603624] (-) TimerEvent: {}
+[1.704090] (-) TimerEvent: {}
+[1.804534] (-) TimerEvent: {}
+[1.905049] (-) TimerEvent: {}
+[2.005381] (-) TimerEvent: {}
+[2.105760] (-) TimerEvent: {}
+[2.206088] (-) TimerEvent: {}
+[2.306485] (-) TimerEvent: {}
+[2.406882] (-) TimerEvent: {}
+[2.507209] (-) TimerEvent: {}
+[2.607540] (-) TimerEvent: {}
+[2.707923] (-) TimerEvent: {}
+[2.808268] (-) TimerEvent: {}
+[2.908612] (-) TimerEvent: {}
+[3.009009] (-) TimerEvent: {}
+[3.109397] (-) TimerEvent: {}
+[3.209795] (-) TimerEvent: {}
+[3.310170] (-) TimerEvent: {}
+[3.410479] (-) TimerEvent: {}
+[3.510864] (-) TimerEvent: {}
+[3.611265] (-) TimerEvent: {}
+[3.711551] (-) TimerEvent: {}
+[3.811945] (-) TimerEvent: {}
+[3.912280] (-) TimerEvent: {}
+[4.012656] (-) TimerEvent: {}
+[4.113090] (-) TimerEvent: {}
+[4.213456] (-) TimerEvent: {}
+[4.313831] (-) TimerEvent: {}
+[4.414159] (-) TimerEvent: {}
+[4.514498] (-) TimerEvent: {}
+[4.614963] (-) TimerEvent: {}
+[4.715294] (-) TimerEvent: {}
+[4.815580] (-) TimerEvent: {}
+[4.915938] (-) TimerEvent: {}
+[5.016306] (-) TimerEvent: {}
+[5.116780] (-) TimerEvent: {}
+[5.217227] (-) TimerEvent: {}
+[5.317542] (-) TimerEvent: {}
+[5.417910] (-) TimerEvent: {}
+[5.518268] (-) TimerEvent: {}
+[5.618576] (-) TimerEvent: {}
+[5.719020] (-) TimerEvent: {}
+[5.819358] (-) TimerEvent: {}
+[5.919752] (-) TimerEvent: {}
+[6.020138] (-) TimerEvent: {}
+[6.120452] (-) TimerEvent: {}
+[6.220859] (-) TimerEvent: {}
+[6.321195] (-) TimerEvent: {}
+[6.421503] (-) TimerEvent: {}
+[6.521862] (-) TimerEvent: {}
+[6.622199] (-) TimerEvent: {}
+[6.722524] (-) TimerEvent: {}
+[6.822912] (-) TimerEvent: {}
+[6.923274] (-) TimerEvent: {}
+[7.023731] (-) TimerEvent: {}
+[7.124164] (-) TimerEvent: {}
+[7.224598] (-) TimerEvent: {}
+[7.324918] (-) TimerEvent: {}
+[7.425327] (-) TimerEvent: {}
+[7.525749] (-) TimerEvent: {}
+[7.626204] (-) TimerEvent: {}
+[7.726540] (-) TimerEvent: {}
+[7.827029] (-) TimerEvent: {}
+[7.927479] (-) TimerEvent: {}
+[8.027964] (-) TimerEvent: {}
+[8.128317] (-) TimerEvent: {}
+[8.228615] (-) TimerEvent: {}
+[8.329045] (-) TimerEvent: {}
+[8.429372] (-) TimerEvent: {}
+[8.529799] (-) TimerEvent: {}
+[8.630209] (-) TimerEvent: {}
+[8.730646] (-) TimerEvent: {}
+[8.831107] (-) TimerEvent: {}
+[8.931445] (-) TimerEvent: {}
+[9.031903] (-) TimerEvent: {}
+[9.132294] (-) TimerEvent: {}
+[9.232711] (-) TimerEvent: {}
+[9.333139] (-) TimerEvent: {}
+[9.433526] (-) TimerEvent: {}
+[9.533935] (-) TimerEvent: {}
+[9.634436] (-) TimerEvent: {}
+[9.734935] (-) TimerEvent: {}
+[9.835275] (-) TimerEvent: {}
+[9.935582] (-) TimerEvent: {}
+[10.036029] (-) TimerEvent: {}
+[10.136347] (-) TimerEvent: {}
+[10.236668] (-) TimerEvent: {}
+[10.337088] (-) TimerEvent: {}
+[10.437384] (-) TimerEvent: {}
+[10.537671] (-) TimerEvent: {}
+[10.638056] (-) TimerEvent: {}
+[10.738353] (-) TimerEvent: {}
+[10.838678] (-) TimerEvent: {}
+[10.939128] (-) TimerEvent: {}
+[11.039461] (-) TimerEvent: {}
+[11.139802] (-) TimerEvent: {}
+[11.240248] (-) TimerEvent: {}
+[11.340551] (-) TimerEvent: {}
+[11.441020] (-) TimerEvent: {}
+[11.541467] (-) TimerEvent: {}
+[11.641896] (-) TimerEvent: {}
+[11.742381] (-) TimerEvent: {}
+[11.842826] (-) TimerEvent: {}
+[11.943194] (-) TimerEvent: {}
+[12.043651] (-) TimerEvent: {}
+[12.144088] (-) TimerEvent: {}
+[12.244519] (-) TimerEvent: {}
+[12.344918] (-) TimerEvent: {}
+[12.445396] (-) TimerEvent: {}
+[12.545847] (-) TimerEvent: {}
+[12.646276] (-) TimerEvent: {}
+[12.746585] (-) TimerEvent: {}
+[12.847042] (-) TimerEvent: {}
+[12.947360] (-) TimerEvent: {}
+[13.047786] (-) TimerEvent: {}
+[13.148207] (-) TimerEvent: {}
+[13.248523] (-) TimerEvent: {}
+[13.348935] (-) TimerEvent: {}
+[13.449379] (-) TimerEvent: {}
+[13.549847] (-) TimerEvent: {}
+[13.650311] (-) TimerEvent: {}
+[13.750609] (-) TimerEvent: {}
+[13.851038] (-) TimerEvent: {}
+[13.951465] (-) TimerEvent: {}
+[14.051848] (-) TimerEvent: {}
+[14.152189] (-) TimerEvent: {}
+[14.252582] (-) TimerEvent: {}
+[14.352953] (-) TimerEvent: {}
+[14.453319] (-) TimerEvent: {}
+[14.553703] (-) TimerEvent: {}
+[14.654114] (-) TimerEvent: {}
+[14.754430] (-) TimerEvent: {}
+[14.854826] (-) TimerEvent: {}
+[14.955160] (-) TimerEvent: {}
+[15.055505] (-) TimerEvent: {}
+[15.155968] (-) TimerEvent: {}
+[15.256441] (-) TimerEvent: {}
+[15.356924] (-) TimerEvent: {}
+[15.457289] (-) TimerEvent: {}
+[15.557652] (-) TimerEvent: {}
+[15.658081] (-) TimerEvent: {}
+[15.758413] (-) TimerEvent: {}
+[15.858822] (-) TimerEvent: {}
+[15.959303] (-) TimerEvent: {}
+[16.059748] (-) TimerEvent: {}
+[16.160210] (-) TimerEvent: {}
+[16.260557] (-) TimerEvent: {}
+[16.360974] (-) TimerEvent: {}
+[16.461322] (-) TimerEvent: {}
+[16.561661] (-) TimerEvent: {}
+[16.662095] (-) TimerEvent: {}
+[16.762402] (-) TimerEvent: {}
+[16.862706] (-) TimerEvent: {}
+[16.963137] (-) TimerEvent: {}
+[17.063469] (-) TimerEvent: {}
+[17.163916] (-) TimerEvent: {}
+[17.264384] (-) TimerEvent: {}
+[17.364786] (-) TimerEvent: {}
+[17.465202] (-) TimerEvent: {}
+[17.565619] (-) TimerEvent: {}
+[17.666069] (-) TimerEvent: {}
+[17.766382] (-) TimerEvent: {}
+[17.866845] (-) TimerEvent: {}
+[17.967241] (-) TimerEvent: {}
+[18.067574] (-) TimerEvent: {}
+[18.168010] (-) TimerEvent: {}
+[18.268338] (-) TimerEvent: {}
+[18.368648] (-) TimerEvent: {}
+[18.469020] (-) TimerEvent: {}
+[18.569283] (-) TimerEvent: {}
+[18.669593] (-) TimerEvent: {}
+[18.769897] (-) TimerEvent: {}
+[18.870224] (-) TimerEvent: {}
+[18.970615] (-) TimerEvent: {}
+[19.071097] (-) TimerEvent: {}
+[19.171483] (-) TimerEvent: {}
+[19.271885] (-) TimerEvent: {}
+[19.372225] (-) TimerEvent: {}
+[19.472625] (-) TimerEvent: {}
+[19.573110] (-) TimerEvent: {}
+[19.673589] (-) TimerEvent: {}
+[19.774056] (-) TimerEvent: {}
+[19.874510] (-) TimerEvent: {}
+[19.974964] (-) TimerEvent: {}
+[20.075309] (-) TimerEvent: {}
+[20.175634] (-) TimerEvent: {}
+[20.276009] (-) TimerEvent: {}
+[20.376347] (-) TimerEvent: {}
+[20.476841] (-) TimerEvent: {}
+[20.577247] (-) TimerEvent: {}
+[20.677582] (-) TimerEvent: {}
+[20.778059] (-) TimerEvent: {}
+[20.878368] (-) TimerEvent: {}
+[20.978733] (-) TimerEvent: {}
+[21.079229] (-) TimerEvent: {}
+[21.179546] (-) TimerEvent: {}
+[21.279836] (-) TimerEvent: {}
+[21.380165] (-) TimerEvent: {}
+[21.480482] (-) TimerEvent: {}
+[21.580814] (-) TimerEvent: {}
+[21.681215] (-) TimerEvent: {}
+[21.781592] (-) TimerEvent: {}
+[21.881943] (-) TimerEvent: {}
+[21.982398] (-) TimerEvent: {}
+[22.082703] (-) TimerEvent: {}
+[22.183022] (-) TimerEvent: {}
+[22.283399] (-) TimerEvent: {}
+[22.383719] (-) TimerEvent: {}
+[22.484139] (-) TimerEvent: {}
+[22.584460] (-) TimerEvent: {}
+[22.684829] (-) TimerEvent: {}
+[22.785158] (-) TimerEvent: {}
+[22.885483] (-) TimerEvent: {}
+[22.985817] (-) TimerEvent: {}
+[23.086198] (-) TimerEvent: {}
+[23.186505] (-) TimerEvent: {}
+[23.286870] (-) TimerEvent: {}
+[23.387267] (-) TimerEvent: {}
+[23.487727] (-) TimerEvent: {}
+[23.588136] (-) TimerEvent: {}
+[23.688468] (-) TimerEvent: {}
+[23.788891] (-) TimerEvent: {}
+[23.889273] (-) TimerEvent: {}
+[23.989681] (-) TimerEvent: {}
+[24.090076] (-) TimerEvent: {}
+[24.190521] (-) TimerEvent: {}
+[24.290897] (-) TimerEvent: {}
+[24.391427] (-) TimerEvent: {}
+[24.491753] (-) TimerEvent: {}
+[24.592122] (-) TimerEvent: {}
+[24.692511] (-) TimerEvent: {}
+[24.792919] (-) TimerEvent: {}
+[24.893278] (-) TimerEvent: {}
+[24.993622] (-) TimerEvent: {}
+[25.094065] (-) TimerEvent: {}
+[25.194310] (-) TimerEvent: {}
+[25.294510] (-) TimerEvent: {}
+[25.394792] (-) TimerEvent: {}
+[25.495183] (-) TimerEvent: {}
+[25.595570] (-) TimerEvent: {}
+[25.696036] (-) TimerEvent: {}
+[25.796431] (-) TimerEvent: {}
+[25.896880] (-) TimerEvent: {}
+[25.997246] (-) TimerEvent: {}
+[26.097641] (-) TimerEvent: {}
+[26.198085] (-) TimerEvent: {}
+[26.298486] (-) TimerEvent: {}
+[26.398802] (-) TimerEvent: {}
+[26.499084] (-) TimerEvent: {}
+[26.599373] (-) TimerEvent: {}
+[26.699684] (-) TimerEvent: {}
+[26.800069] (-) TimerEvent: {}
+[26.900423] (-) TimerEvent: {}
+[27.000861] (-) TimerEvent: {}
+[27.101209] (-) TimerEvent: {}
+[27.201537] (-) TimerEvent: {}
+[27.302016] (-) TimerEvent: {}
+[27.402419] (-) TimerEvent: {}
+[27.502800] (-) TimerEvent: {}
+[27.603225] (-) TimerEvent: {}
+[27.703651] (-) TimerEvent: {}
+[27.804037] (-) TimerEvent: {}
+[27.904471] (-) TimerEvent: {}
+[28.004813] (-) TimerEvent: {}
+[28.105182] (-) TimerEvent: {}
+[28.205483] (-) TimerEvent: {}
+[28.305907] (-) TimerEvent: {}
+[28.406225] (-) TimerEvent: {}
+[28.506650] (-) TimerEvent: {}
+[28.607110] (-) TimerEvent: {}
+[28.707422] (-) TimerEvent: {}
+[28.807731] (-) TimerEvent: {}
+[28.908063] (-) TimerEvent: {}
+[29.008402] (-) TimerEvent: {}
+[29.108824] (-) TimerEvent: {}
+[29.209220] (-) TimerEvent: {}
+[29.309653] (-) TimerEvent: {}
+[29.409970] (-) TimerEvent: {}
+[29.510405] (-) TimerEvent: {}
+[29.610849] (-) TimerEvent: {}
+[29.711261] (-) TimerEvent: {}
+[29.811588] (-) TimerEvent: {}
+[29.912065] (-) TimerEvent: {}
+[30.012390] (-) TimerEvent: {}
+[30.112798] (-) TimerEvent: {}
+[30.213186] (-) TimerEvent: {}
+[30.313509] (-) TimerEvent: {}
+[30.413923] (-) TimerEvent: {}
+[30.514274] (-) TimerEvent: {}
+[30.614610] (-) TimerEvent: {}
+[30.715038] (-) TimerEvent: {}
+[30.815272] (-) TimerEvent: {}
+[30.915419] (-) TimerEvent: {}
+[31.015718] (-) TimerEvent: {}
+[31.116163] (-) TimerEvent: {}
+[31.216647] (-) TimerEvent: {}
+[31.317088] (-) TimerEvent: {}
+[31.417443] (-) TimerEvent: {}
+[31.517902] (-) TimerEvent: {}
+[31.618273] (-) TimerEvent: {}
+[31.718719] (-) TimerEvent: {}
+[31.819145] (-) TimerEvent: {}
+[31.919461] (-) TimerEvent: {}
+[32.019752] (-) TimerEvent: {}
+[32.120201] (-) TimerEvent: {}
+[32.220647] (-) TimerEvent: {}
+[32.321111] (-) TimerEvent: {}
+[32.421474] (-) TimerEvent: {}
+[32.521657] (-) TimerEvent: {}
+[32.621901] (-) TimerEvent: {}
+[32.722215] (-) TimerEvent: {}
+[32.822444] (-) TimerEvent: {}
+[32.922719] (-) TimerEvent: {}
+[33.022941] (-) TimerEvent: {}
+[33.123155] (-) TimerEvent: {}
+[33.223336] (-) TimerEvent: {}
+[33.323672] (-) TimerEvent: {}
+[33.424029] (-) TimerEvent: {}
+[33.524325] (-) TimerEvent: {}
+[33.624633] (-) TimerEvent: {}
+[33.725086] (-) TimerEvent: {}
+[33.825413] (-) TimerEvent: {}
+[33.925816] (-) TimerEvent: {}
+[34.026166] (-) TimerEvent: {}
+[34.126473] (-) TimerEvent: {}
+[34.226770] (-) TimerEvent: {}
+[34.327050] (-) TimerEvent: {}
+[34.427227] (-) TimerEvent: {}
+[34.527416] (-) TimerEvent: {}
+[34.627623] (-) TimerEvent: {}
+[34.727875] (-) TimerEvent: {}
+[34.828250] (-) TimerEvent: {}
+[34.928653] (-) TimerEvent: {}
+[35.029114] (-) TimerEvent: {}
+[35.129518] (-) TimerEvent: {}
+[35.229908] (-) TimerEvent: {}
+[35.330273] (-) TimerEvent: {}
+[35.430677] (-) TimerEvent: {}
+[35.531134] (-) TimerEvent: {}
+[35.631468] (-) TimerEvent: {}
+[35.731895] (-) TimerEvent: {}
+[35.832258] (-) TimerEvent: {}
+[35.932663] (-) TimerEvent: {}
+[36.033085] (-) TimerEvent: {}
+[36.133406] (-) TimerEvent: {}
+[36.233815] (-) TimerEvent: {}
+[36.334265] (-) TimerEvent: {}
+[36.434674] (-) TimerEvent: {}
+[36.535148] (-) TimerEvent: {}
+[36.635646] (-) TimerEvent: {}
+[36.736154] (-) TimerEvent: {}
+[36.836542] (-) TimerEvent: {}
+[36.937089] (-) TimerEvent: {}
+[37.037550] (-) TimerEvent: {}
+[37.138051] (-) TimerEvent: {}
+[37.238492] (-) TimerEvent: {}
+[37.338783] (-) TimerEvent: {}
+[37.439213] (-) TimerEvent: {}
+[37.539640] (-) TimerEvent: {}
+[37.640034] (-) TimerEvent: {}
+[37.740457] (-) TimerEvent: {}
+[37.840911] (-) TimerEvent: {}
+[37.941421] (-) TimerEvent: {}
+[38.041759] (-) TimerEvent: {}
+[38.142174] (-) TimerEvent: {}
+[38.242541] (-) TimerEvent: {}
+[38.342935] (-) TimerEvent: {}
+[38.443282] (-) TimerEvent: {}
+[38.543678] (-) TimerEvent: {}
+[38.644020] (-) TimerEvent: {}
+[38.744413] (-) TimerEvent: {}
+[38.844802] (-) TimerEvent: {}
+[38.945248] (-) TimerEvent: {}
+[39.045693] (-) TimerEvent: {}
+[39.146128] (-) TimerEvent: {}
+[39.246525] (-) TimerEvent: {}
+[39.346905] (-) TimerEvent: {}
+[39.447337] (-) TimerEvent: {}
+[39.547852] (-) TimerEvent: {}
+[39.648270] (-) TimerEvent: {}
+[39.748696] (-) TimerEvent: {}
+[39.849138] (-) TimerEvent: {}
+[39.949506] (-) TimerEvent: {}
+[40.049844] (-) TimerEvent: {}
+[40.150284] (-) TimerEvent: {}
+[40.250710] (-) TimerEvent: {}
+[40.351149] (-) TimerEvent: {}
+[40.451616] (-) TimerEvent: {}
+[40.552040] (-) TimerEvent: {}
+[40.652424] (-) TimerEvent: {}
+[40.752793] (-) TimerEvent: {}
+[40.853207] (-) TimerEvent: {}
+[40.953610] (-) TimerEvent: {}
+[41.054049] (-) TimerEvent: {}
+[41.154467] (-) TimerEvent: {}
+[41.254836] (-) TimerEvent: {}
+[41.355298] (-) TimerEvent: {}
+[41.455728] (-) TimerEvent: {}
+[41.556182] (-) TimerEvent: {}
+[41.656627] (-) TimerEvent: {}
+[41.757080] (-) TimerEvent: {}
+[41.857391] (-) TimerEvent: {}
+[41.957811] (-) TimerEvent: {}
+[42.058154] (-) TimerEvent: {}
+[42.158477] (-) TimerEvent: {}
+[42.258870] (-) TimerEvent: {}
+[42.359223] (-) TimerEvent: {}
+[42.459564] (-) TimerEvent: {}
+[42.559958] (-) TimerEvent: {}
+[42.660396] (-) TimerEvent: {}
+[42.760773] (-) TimerEvent: {}
+[42.861149] (-) TimerEvent: {}
+[42.961526] (-) TimerEvent: {}
+[43.062005] (-) TimerEvent: {}
+[43.162348] (-) TimerEvent: {}
+[43.262763] (-) TimerEvent: {}
+[43.363204] (-) TimerEvent: {}
+[43.463593] (-) TimerEvent: {}
+[43.564096] (-) TimerEvent: {}
+[43.664707] (-) TimerEvent: {}
+[43.765118] (-) TimerEvent: {}
+[43.865527] (-) TimerEvent: {}
+[43.965946] (-) TimerEvent: {}
+[44.066285] (-) TimerEvent: {}
+[44.166596] (-) TimerEvent: {}
+[44.267076] (-) TimerEvent: {}
+[44.367384] (-) TimerEvent: {}
+[44.467770] (-) TimerEvent: {}
+[44.568250] (-) TimerEvent: {}
+[44.668568] (-) TimerEvent: {}
+[44.768927] (-) TimerEvent: {}
+[44.869284] (-) TimerEvent: {}
+[44.969651] (-) TimerEvent: {}
+[45.070092] (-) TimerEvent: {}
+[45.170408] (-) TimerEvent: {}
+[45.270830] (-) TimerEvent: {}
+[45.371276] (-) TimerEvent: {}
+[45.471697] (-) TimerEvent: {}
+[45.572138] (-) TimerEvent: {}
+[45.672600] (-) TimerEvent: {}
+[45.773074] (-) TimerEvent: {}
+[45.873522] (-) TimerEvent: {}
+[45.973948] (-) TimerEvent: {}
+[46.074378] (-) TimerEvent: {}
+[46.174787] (-) TimerEvent: {}
+[46.275192] (-) TimerEvent: {}
+[46.375600] (-) TimerEvent: {}
+[46.476061] (-) TimerEvent: {}
+[46.576401] (-) TimerEvent: {}
+[46.676724] (-) TimerEvent: {}
+[46.777106] (-) TimerEvent: {}
+[46.877420] (-) TimerEvent: {}
+[46.977800] (-) TimerEvent: {}
+[47.078211] (-) TimerEvent: {}
+[47.178599] (-) TimerEvent: {}
+[47.279058] (-) TimerEvent: {}
+[47.379579] (-) TimerEvent: {}
+[47.480076] (-) TimerEvent: {}
+[47.580429] (-) TimerEvent: {}
+[47.680817] (-) TimerEvent: {}
+[47.781358] (-) TimerEvent: {}
+[47.881882] (-) TimerEvent: {}
+[47.982407] (-) TimerEvent: {}
+[48.082767] (-) TimerEvent: {}
+[48.183227] (-) TimerEvent: {}
+[48.283575] (-) TimerEvent: {}
+[48.384049] (-) TimerEvent: {}
+[48.484493] (-) TimerEvent: {}
+[48.584888] (-) TimerEvent: {}
+[48.685317] (-) TimerEvent: {}
+[48.785766] (-) TimerEvent: {}
+[48.886210] (-) TimerEvent: {}
+[48.986551] (-) TimerEvent: {}
+[49.087011] (-) TimerEvent: {}
+[49.187357] (-) TimerEvent: {}
+[49.287746] (-) TimerEvent: {}
+[49.388211] (-) TimerEvent: {}
+[49.488565] (-) TimerEvent: {}
+[49.588916] (-) TimerEvent: {}
+[49.689274] (-) TimerEvent: {}
+[49.789581] (-) TimerEvent: {}
+[49.890028] (-) TimerEvent: {}
+[49.990429] (-) TimerEvent: {}
+[50.090818] (-) TimerEvent: {}
+[50.191162] (-) TimerEvent: {}
+[50.291458] (-) TimerEvent: {}
+[50.391838] (-) TimerEvent: {}
+[50.492201] (-) TimerEvent: {}
+[50.592550] (-) TimerEvent: {}
+[50.692950] (-) TimerEvent: {}
+[50.793278] (-) TimerEvent: {}
+[50.893570] (-) TimerEvent: {}
+[50.994090] (-) TimerEvent: {}
+[51.094500] (-) TimerEvent: {}
+[51.194761] (-) TimerEvent: {}
+[51.295112] (-) TimerEvent: {}
+[51.395450] (-) TimerEvent: {}
+[51.495922] (-) TimerEvent: {}
+[51.596311] (-) TimerEvent: {}
+[51.696796] (-) TimerEvent: {}
+[51.797315] (-) TimerEvent: {}
+[51.897742] (-) TimerEvent: {}
+[51.998151] (-) TimerEvent: {}
+[52.098586] (-) TimerEvent: {}
+[52.199048] (-) TimerEvent: {}
+[52.299501] (-) TimerEvent: {}
+[52.399920] (-) TimerEvent: {}
+[52.500426] (-) TimerEvent: {}
+[52.600882] (-) TimerEvent: {}
+[52.701343] (-) TimerEvent: {}
+[52.801800] (-) TimerEvent: {}
+[52.902209] (-) TimerEvent: {}
+[53.002527] (-) TimerEvent: {}
+[53.102843] (-) TimerEvent: {}
+[53.203172] (-) TimerEvent: {}
+[53.303568] (-) TimerEvent: {}
+[53.403929] (-) TimerEvent: {}
+[53.504428] (-) TimerEvent: {}
+[53.604868] (-) TimerEvent: {}
+[53.705298] (-) TimerEvent: {}
+[53.805733] (-) TimerEvent: {}
+[53.906172] (-) TimerEvent: {}
+[54.006475] (-) TimerEvent: {}
+[54.106849] (-) TimerEvent: {}
+[54.207258] (-) TimerEvent: {}
+[54.307587] (-) TimerEvent: {}
+[54.408009] (-) TimerEvent: {}
+[54.508355] (-) TimerEvent: {}
+[54.608774] (-) TimerEvent: {}
+[54.709182] (-) TimerEvent: {}
+[54.809501] (-) TimerEvent: {}
+[54.909880] (-) TimerEvent: {}
+[55.010245] (-) TimerEvent: {}
+[55.110568] (-) TimerEvent: {}
+[55.211054] (-) TimerEvent: {}
+[55.311453] (-) TimerEvent: {}
+[55.411710] (-) TimerEvent: {}
+[55.512018] (-) TimerEvent: {}
+[55.612459] (-) TimerEvent: {}
+[55.712844] (-) TimerEvent: {}
+[55.813325] (-) TimerEvent: {}
+[55.913690] (-) TimerEvent: {}
+[56.014129] (-) TimerEvent: {}
+[56.114560] (-) TimerEvent: {}
+[56.215047] (-) TimerEvent: {}
+[56.315447] (-) TimerEvent: {}
+[56.415833] (-) TimerEvent: {}
+[56.516225] (-) TimerEvent: {}
+[56.616639] (-) TimerEvent: {}
+[56.717088] (-) TimerEvent: {}
+[56.817504] (-) TimerEvent: {}
+[56.917937] (-) TimerEvent: {}
+[57.018278] (-) TimerEvent: {}
+[57.118611] (-) TimerEvent: {}
+[57.219076] (-) TimerEvent: {}
+[57.319502] (-) TimerEvent: {}
+[57.419839] (-) TimerEvent: {}
+[57.520222] (-) TimerEvent: {}
+[57.620692] (-) TimerEvent: {}
+[57.721121] (-) TimerEvent: {}
+[57.821577] (-) TimerEvent: {}
+[57.921909] (-) TimerEvent: {}
+[58.022258] (-) TimerEvent: {}
+[58.122571] (-) TimerEvent: {}
+[58.222937] (-) TimerEvent: {}
+[58.323364] (-) TimerEvent: {}
+[58.423758] (-) TimerEvent: {}
+[58.524159] (-) TimerEvent: {}
+[58.624473] (-) TimerEvent: {}
+[58.724771] (-) TimerEvent: {}
+[58.825162] (-) TimerEvent: {}
+[58.925583] (-) TimerEvent: {}
+[59.026011] (-) TimerEvent: {}
+[59.126575] (-) TimerEvent: {}
+[59.227206] (-) TimerEvent: {}
+[59.327527] (-) TimerEvent: {}
+[59.427969] (-) TimerEvent: {}
+[59.528460] (-) TimerEvent: {}
+[59.628859] (-) TimerEvent: {}
+[59.729274] (-) TimerEvent: {}
+[59.829595] (-) TimerEvent: {}
+[59.930033] (-) TimerEvent: {}
+[60.030462] (-) TimerEvent: {}
+[60.130855] (-) TimerEvent: {}
+[60.231295] (-) TimerEvent: {}
+[60.331728] (-) TimerEvent: {}
+[60.432139] (-) TimerEvent: {}
+[60.532557] (-) TimerEvent: {}
+[60.633030] (-) TimerEvent: {}
+[60.733468] (-) TimerEvent: {}
+[60.833784] (-) TimerEvent: {}
+[60.934052] (-) TimerEvent: {}
+[60.980636] (aicar_bringup) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/aicar_bringup', 'build', '--build-base', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/build', 'install', '--record', '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/src/aicar_bringup', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/yusy', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'yusy', 'LC_TIME': 'ko_KR.UTF-8', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"ko","osLocale":"en-us","resolvedLanguage":"ko","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","messagesFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f/nls.messages.json","corruptMarkerFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"},"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"3a9564676442280bf72c3aeaadf6ff67.ko","_languagePackSupport":true,"_translationsConfigFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/tcf.json","_cacheRoot":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko","_resolvedLanguagePackCoreLocation":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/0958016b2af9f09bb4257e0df4a95e2f90590f9f","_corruptedFile":"/home/yusy/.config/Code/clp/3a9564676442280bf72c3aeaadf6ff67.ko/corrupted.info"}', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'DEBUG': 'release', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/yusy', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'DESKTOP_SESSION': 'ubuntu', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-c3794fe1-1.12-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_MONETARY': 'ko_KR.UTF-8', 'MANAGERPID': '1362', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1853', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', '_CONDA_ROOT': '/home/yusy/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '7681', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'COLCON_PREFIX_PATH': '/home/yusy/ros2_ws/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'yusy', 'JOURNAL_STREAM': '8:10934', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'USERNAME': 'yusy', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/yusy/.local/bin:/home/yusy/.codex/tmp/arg0/codex-arg0VbaCAJ:/home/yusy/.local/bin:/opt/ros/humble/bin:/home/yusy/miniconda3/condabin:/home/yusy/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/yusy/.vscode/extensions/openai.chatgpt-26.506.31421-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/msi:@/tmp/.ICE-unix/1819,unix/msi:/tmp/.ICE-unix/1819', 'INVOCATION_ID': '00632fcb52e0462088a2a463c7ca3311', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller:/home/yusy/ros2_ws/install/superpoint_slam:/home/yusy/ros2_ws/install/ocams_ros2:/home/yusy/ros2_ws/install/ocam_ros2:/home/yusy/ros2_ws/install/my_robot_controller:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/yusy/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019e2499-9f78-7d13-be91-58ce424a4c1b', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/yusy/miniconda3/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/yusy/.config/Code/CachedData/0958016b2af9f09bb4257e0df4a95e2f90590f9f', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_vision/lib/python3.10/site-packages:/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_controller/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/superpoint_slam/lib/python3.10/site-packages:/home/yusy/ros2_ws/install/ocams_ros2/lib/python3.10/site-packages:/home/yusy/ros2_ws/build/my_robot_controller:/home/yusy/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/yusy/ros2_ws/install/ocam_ros2', 'VSCODE_PID': '7681'}, 'shell': False}
+[61.034197] (-) TimerEvent: {}
+[61.095185] (aicar_bringup) StdoutLine: {'line': b'running egg_info\n'}
+[61.095528] (aicar_bringup) StdoutLine: {'line': b'writing ../../build/aicar_bringup/aicar_bringup.egg-info/PKG-INFO\n'}
+[61.095573] (aicar_bringup) StdoutLine: {'line': b'writing dependency_links to ../../build/aicar_bringup/aicar_bringup.egg-info/dependency_links.txt\n'}
+[61.095600] (aicar_bringup) StdoutLine: {'line': b'writing entry points to ../../build/aicar_bringup/aicar_bringup.egg-info/entry_points.txt\n'}
+[61.095623] (aicar_bringup) StdoutLine: {'line': b'writing requirements to ../../build/aicar_bringup/aicar_bringup.egg-info/requires.txt\n'}
+[61.095646] (aicar_bringup) StdoutLine: {'line': b'writing top-level names to ../../build/aicar_bringup/aicar_bringup.egg-info/top_level.txt\n'}
+[61.096670] (aicar_bringup) StdoutLine: {'line': b"reading manifest file '../../build/aicar_bringup/aicar_bringup.egg-info/SOURCES.txt'\n"}
+[61.096928] (aicar_bringup) StdoutLine: {'line': b"writing manifest file '../../build/aicar_bringup/aicar_bringup.egg-info/SOURCES.txt'\n"}
+[61.096955] (aicar_bringup) StdoutLine: {'line': b'running build\n'}
+[61.096984] (aicar_bringup) StdoutLine: {'line': b'running build_py\n'}
+[61.097129] (aicar_bringup) StdoutLine: {'line': b'running install\n'}
+[61.097412] (aicar_bringup) StdoutLine: {'line': b'running install_lib\n'}
+[61.098013] (aicar_bringup) StdoutLine: {'line': b'running install_data\n'}
+[61.098072] (aicar_bringup) StdoutLine: {'line': b'copying launch/pid_aicar_drive.launch.py -> /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/share/aicar_bringup/launch\n'}
+[61.098099] (aicar_bringup) StdoutLine: {'line': b'running install_egg_info\n'}
+[61.099039] (aicar_bringup) StdoutLine: {'line': b"removing '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages/aicar_bringup-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[61.099115] (aicar_bringup) StdoutLine: {'line': b'Copying ../../build/aicar_bringup/aicar_bringup.egg-info to /home/yusy/maedongyee/aicar_madongeeee/aicar_ws/install/aicar_bringup/lib/python3.10/site-packages/aicar_bringup-0.0.0-py3.10.egg-info\n'}
+[61.099316] (aicar_bringup) StdoutLine: {'line': b'running install_scripts\n'}
+[61.108631] (aicar_bringup) StdoutLine: {'line': b"writing list of installed files to '/home/yusy/maedongyee/aicar_madongeeee/aicar_ws/build/aicar_bringup/install.log'\n"}
+[61.119574] (aicar_bringup) CommandEnded: {'returncode': 0}
+[61.122910] (aicar_bringup) JobEnded: {'identifier': 'aicar_bringup', 'rc': 0}
+[61.123198] (-) EventReactorShutdown: {}

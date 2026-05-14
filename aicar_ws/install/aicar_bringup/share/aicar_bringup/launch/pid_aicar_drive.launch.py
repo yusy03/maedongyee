@@ -83,7 +83,18 @@ def generate_launch_description():
     controller_node = Node(
         package='aicar_controller',
         executable='pid_controller_node',
-        name='pid_controller_node'
+        name='pid_controller_node',
+        condition=UnlessCondition(display_only)
+    )
+
+    controller_display_node = Node(
+        package='aicar_controller',
+        executable='pid_controller_node',
+        name='pid_controller_node',
+        remappings=[
+            ('/cmd_vel', '/cmd_vel_display'),
+        ],
+        condition=IfCondition(display_only)
     )
 
     motor_driver_node = Node(
@@ -110,6 +121,7 @@ def generate_launch_description():
         bev_view_node,
         bev_color_view_node,
         controller_node,
+        controller_display_node,
         motor_driver_node,
         drive_direction_display_node,
     ])

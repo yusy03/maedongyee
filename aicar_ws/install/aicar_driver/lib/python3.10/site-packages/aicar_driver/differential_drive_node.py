@@ -29,11 +29,15 @@ class MotorControllerNode(Node):
         self.declare_parameter('wheel_separation', 0.106)
         self.declare_parameter('speed_gain', 150.0) # m/s -> PWM 변환 비율
         self.declare_parameter('display_only', False) # 테스트용: 모터 대신 화면 표시
+        self.declare_parameter('cmd_timeout', 0.5) # 명령 끊김 시 자동 정지 시간
 
         self.wheel_sep = self.get_parameter('wheel_separation').get_parameter_value().double_value
         self.speed_gain = self.get_parameter('speed_gain').get_parameter_value().double_value
         self.display_only = self.get_parameter('display_only').get_parameter_value().bool_value
+        self.cmd_timeout = self.get_parameter('cmd_timeout').get_parameter_value().double_value
         self.last_display_direction = None
+        self.last_cmd_time = self.get_clock().now().nanoseconds / 1e9
+        self.watchdog_stopped = True
 
         self.h = None
         if self.display_only:
@@ -53,11 +57,15 @@ class MotorControllerNode(Node):
         # 구독 변경: /drive (Ackermann) -> /cmd_vel (Twist)
         self.subscription = self.create_subscription(
             Twist, '/cmd_vel', self.cmd_vel_callback, 10)
+        self.create_timer(0.1, self.watchdog_callback)
 
     def cmd_vel_callback(self, msg):
         if self.display_only:
             self.show_drive_direction(msg)
             return
+
+        self.last_cmd_time = self.get_clock().now().nanoseconds / 1e9
+        self.watchdog_stopped = False
 
         # 1. Twist 메시지에서 선속도(v), 각속도(w) 추출
         linear_x = -msg.linear.x   # m/s
@@ -79,6 +87,16 @@ class MotorControllerNode(Node):
         # 4. 모터 하드웨어 제어
         self.set_motor(AIN1, AIN2, PWMA, duty_r)
         self.set_motor(BIN1, BIN2, PWMB, duty_l)
+
+    def watchdog_callback(self):
+        if self.display_only or self.h is None:
+            return
+
+        now = self.get_clock().now().nanoseconds / 1e9
+        if now - self.last_cmd_time > self.cmd_timeout and not self.watchdog_stopped:
+            self.motor_stop()
+            self.watchdog_stopped = True
+            self.get_logger().warn('No /cmd_vel received recently. Motors stopped by watchdog.')
 
     def show_drive_direction(self, msg):
         angular_threshold = 0.05
