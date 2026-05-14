@@ -53,6 +53,11 @@ class PIDControllerNode(Node):
         self.integral_error = 0.0
         self.prev_time = self.get_clock().now().nanoseconds / 1e9
 
+        # --- [추가] 시각화용 상태 텍스트 변수 ---
+        self.display_state_text = "State: WAITING"
+        self.display_sign_text = "Sign: None"
+        self.display_action_text = "Action: Initializing"
+
         # --- 주행 상태 머신 변수 ---
         self.drive_state = STATE_NORMAL # 라인 추종/PID 테스트용으로 즉시 주행 시작
 
@@ -76,6 +81,9 @@ class PIDControllerNode(Node):
         # --- 구독 설정 ---
         self.subscription = self.create_subscription(
             Image, '/image_bev_binary', self.bev_callback, 10)
+        # [추가] 시각화를 위한 원본 이미지 구독
+        self.image_subscription = self.create_subscription(
+            Image, '/camera/image_raw', self.image_display_callback, 10)
         # 빨간 종료선 정지 테스트를 잠시 비활성화함.
         # self.red_subscription = self.create_subscription(
         #     Image, '/image_red_bev', self.red_bev_callback, 10)
@@ -266,24 +274,36 @@ class PIDControllerNode(Node):
                 self.cleanup_after_sign(self.current_sign)
                 self.set_state(STATE_NORMAL)
 
-        # --- 시각화: 현재 상태, 표지판, 동작 정보 표시 ---
-        display_img = cv2.cvtColor(bev_binary, cv2.COLOR_GRAY2BGR)
-
-        # 1. 현재 주행 상태 (노란색)
-        cv2.putText(display_img, f"State: {self.drive_state}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 0), 2)
-        # 2. 현재 인식된 표지판 (청록색)
-        sign_text = f"Sign: {self.current_sign}" if self.current_sign else "Sign: None"
-        cv2.putText(display_img, sign_text, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
-        # 3. [추가] 현재 수행 동작 (초록색)
-        cv2.putText(display_img, action_text, (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-
-        cv2.imshow("Controller Status", display_img)
-        cv2.waitKey(1)
+        # --- [수정] 시각화: cv2 코드를 제거하고, 텍스트 변수만 업데이트 ---
+        self.display_state_text = f"State: {self.drive_state}"
+        self.display_sign_text = f"Sign: {self.current_sign}" if self.current_sign else "Sign: None"
+        self.display_action_text = action_text
 
         twist = Twist()
         twist.linear.x = float(linear_vel)
         twist.angular.z = float(angular_vel)
         self.cmd_buffer.append((now, twist))
+
+    # --- [추가] 시각화 콜백 ---
+    def image_display_callback(self, msg):
+        """ 원본 카메라 이미지에 현재 상태를 오버레이하여 보여줍니다. """
+        try:
+            # 원본 이미지를 받아옵니다.
+            display_img = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+        except Exception as e:
+            self.get_logger().error(f'Failed to convert image for display: {e}')
+            return
+
+        # bev_callback에서 업데이트된 최신 상태 텍스트를 이미지에 그립니다.
+        # 1. 현재 주행 상태 (노란색) -> 글자 크기 키움
+        cv2.putText(display_img, self.display_state_text, (10, 40), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 255), 2)
+        # 2. 현재 인식된 표지판 (청록색)
+        cv2.putText(display_img, self.display_sign_text, (10, 85), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 0), 2)
+        # 3. 현재 수행 동작 (초록색)
+        cv2.putText(display_img, self.display_action_text, (10, 130), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 0), 2)
+
+        cv2.imshow("Controller Status", display_img)
+        cv2.waitKey(1)
 
     def calculate_pid(self, bev_binary, h, w, now):
         y_row = h - self.row_offset
